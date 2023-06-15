@@ -31,7 +31,7 @@ Data that has to be input into the pipeline from external sources, rather than b
 
 Builder phase:
 
-- starting_data_files: microarray files from Vaidhy
+- starting_data_files: microarray files from Mahaganapathy
 - NJLAGS_CNV.ped: pedigree file of NJLAGS cohort
 - ASD_only.ped: pedigree file for ASD_only phenotype
 - ASD_LI.ped: pedigree file for ASD_only phenotype
