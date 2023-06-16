@@ -95,7 +95,7 @@ In order to run the gSV pipeline, the following scripts in the /doc/ folder must
 
 # Figures and Tables
 
-This directory contains two folders with the scripts used to generate the figures and tables for this project.
+This directory contains three folders with the scripts used to generate the figures and tables for this project. Two of them contain the scripts for the CNV and gSV pipeline figures/tables respectively, while the third contains the scripts for generating the protein-protein interaction network used in Figure 5.
 
 ### CNV figures and tables
 
@@ -111,3 +111,11 @@ This directory contains two folders with the scripts used to generate the figure
 - GenerateGeneLevelSummaryTable_MEISV.py - Used to build gSV input table for Table 4
 - GenerateGeneLevelSummaryTable.py - Used to build Table 4
 - GenerateSizeDistributionChartsByMEI.py - Used to plot Figure S2
+
+### PPI Network
+
+This folder contains the files and scripts used to generate Figure 5. Pathway data was drawn from ConsensusPathDB, and input genes from the results of the combined CNV/gSV pipeline.
+
+- Network_gene.py - Used to build gene table referenced by Network_nodes_edges.py
+- Network_nodes_edges.py - Used to build table defining network structure
+- Network_plot.R - Used to plot PPI Network
