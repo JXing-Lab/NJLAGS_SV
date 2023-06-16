@@ -90,6 +90,7 @@ In order to run the gSV pipeline, the following scripts in the /doc/ folder must
 4_svanna_psv_score.sh
 5_universal_filtering.sh
 6_results.sh
+7_tables_and_figures.sh
 ```
 
 # Figures and Tables
