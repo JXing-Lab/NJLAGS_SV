@@ -4,15 +4,15 @@ This repository contains data and scripts for Alibutud, Hansali, Cao, Zhou, Maha
 
 ### Project structure
 
-The project is divided into two pipelines (CNV and gSV). The gSV pipeline is additionally comprised of results from SV and MEI eQTL analysis.
+The project is divided into two pipelines (CNV and gSV/MEI). The gSV/MEI pipeline is additionally comprised of results from AF and eQTL analysis.
 
 ```jsx
-      CNV                    gSV
- ┌────────────┐         ┌────────────┐
- │            │         │SV Pipeline │
- │CNV Pipeline│         │            │
- │            │         │MEI Pipeline│
- └─────┬──────┘         └──────┬─────┘
+      CNV                    gSV/MEI
+ ┌────────────┐         ┌─────────────┐
+ │            │         │AF Pipeline  │
+ │CNV Pipeline│         │             │
+ │            │         │eQTL Pipeline│
+ └─────┬──────┘         └──────┬──────┘
        │                       │
        │   ┌───────────────┐   │
        └───┤Candidate genes├───┘
@@ -90,7 +90,6 @@ In order to run the gSV pipeline, the following scripts in the /doc/ folder must
 4_svanna_psv_score.sh
 5_universal_filtering.sh
 6_results.sh
-7_tables_and_figures.sh
 ```
 
 # Figures and Tables
@@ -106,7 +105,7 @@ This directory contains three folders with the scripts used to generate the figu
 - BoxPlotEnrichment.R - Used to plot Figure S1(B)
 
 ### gSV figures and tables
-
+- 7_tables_and_figures.sh is used to generate the tables and figures
 - GenerateGeneLevelSummaryTable_CNV.py - Used to build CNV input table for Table 4
 - GenerateGeneLevelSummaryTable_MEISV.py - Used to build gSV input table for Table 4
 - GenerateGeneLevelSummaryTable.py - Used to build Table 4
