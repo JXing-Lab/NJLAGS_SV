@@ -1,29 +1,16 @@
+
+
 library(ggplot2) 
 library(tidyverse) 
 library(ggforce) 
 library(gridExtra) 
 library(scatterpie) 
 library(RColorBrewer) 
+library(ggrepel)
+library(GGally)
+library(shadowtext)
 
-geom_nodelabel_repel(
-  mapping = NULL,
-  data = NULL,
-  parse = FALSE,
-  ...,
-  box.padding = unit(0.25, "lines"),
-  label.padding = unit(0.25, "lines"),
-  point.padding = unit(1e-06, "lines"),
-  label.r = unit(0.15, "lines"),
-  label.size = 0.25,
-  arrow = NULL,
-  force = 1,
-  max.iter = 10000,
-  nudge_x = 0,
-  nudge_y = 0,
-  na.rm = FALSE,
-  show.legend = NA,
-  inherit.aes = TRUE
-)
+
 
 
 plotNetWork <- function(xf.nodes, xf.edges, target_key,alternative_key){ 
@@ -44,10 +31,6 @@ plotNetWork <- function(xf.nodes, xf.edges, target_key,alternative_key){
   
   x.fill.color <- c(brewer.pal(9,'Set1')[1:5],brewer.pal(12,'Set3')) 
   
-  
-  
-  
-  
   # split xdf.edges 
   
   xdf.edges.final <- xdf.edges[xdf.edges$node1 %in% xdf.final$key & xdf.edges$node2 %in% xdf.final$key,] 
@@ -57,24 +40,26 @@ plotNetWork <- function(xf.nodes, xf.edges, target_key,alternative_key){
   x.nnn=2 
   
   p <- ggplot()  + 
-    geom_segment(data = xdf.edges.final, aes(x=x,y=y,xend=xend,yend=yend, color=edgeType)) +
-    geom_segment(data = xdf.edges.other, aes(x=x,y=y,xend=xend,yend=yend, color=edgeType), size=0.3) +
+    geom_segment(data = xdf.edges.final, aes(x=x*2,y=y*2,xend=xend*2,yend=yend*2, color=edgeType)) +
+    geom_segment(data = xdf.edges.other, aes(x=x*2,y=y*2,xend=xend*2,yend=yend*2, color=edgeType), linewidth=0.3) +
     scale_color_manual(values=brewer.pal(8,'Set2')) + 
-    geom_scatterpie(aes(x=x, y=y, r=sqrt(listCount)*0.04 * x.nnn), data=xdf.nodes, cols=c(target_key,alternative_key), color=NA) + 
+    geom_scatterpie(aes(x=x*2, y=y*2, r=sqrt(listCount)*0.06 * x.nnn), data=xdf.nodes, cols=c(target_key,alternative_key), color=NA) + 
     coord_fixed() + 
-    geom_nodelabel_repel(aes(label = vertex.names),
-                         box.padding = unit(1.5, "lines"),
-                         data = low_degree,
-                         segment.colour = "tomato",
-                         colour = "white", fill = "tomato"
-    ) +
     theme_void()+ 
-    geom_text(data = xdf.final, aes(x=x, y=y-0.03 * x.nnn, label=key), size=3,color='blue') + 
+    geom_text(data = xdf.final, 
+                    #min.segment.length = Inf,
+                    aes(x=x*2, y=y*2-0.1 * x.nnn, label=key), 
+                    linewidth=3,color='blue') + 
     scale_fill_manual(values=x.fill.color) + 
-    geom_text(data = xdf.other, aes(x=x, y=y-0.03* x.nnn, label=key), size=3,color='black') 
+                    geom_text( 
+                    data = xdf.other, 
+                    #min.segment.length = Inf,
+                    aes(x=x, y=y-0.1* x.nnn, label=key), 
+                    linewidth=3,color='black') 
   
   return(p) 
   
+
 } 
 
 
@@ -83,11 +68,11 @@ plotNetWork <- function(xf.nodes, xf.edges, target_key,alternative_key){
 
 
 
-pdf('/lab01/Projects/Rohan_Projects/CNV_Project/2023/CNV_Pipeline/Results/Plots/Network_PPI/20230605.networkx.pdf',width = 12, height = 12) 
+pdf('/home/rohan/CNV_Project/2023/Submission_Pipeline/Results/Plots/Network_PPI/20230609_truncated.networkx_lineless_large.pdf',width = 12, height = 12) 
 
-xf.nodes <- '/lab01/Projects/Rohan_Projects/CNV_Project/2023/CNV_Pipeline/Results/Plots/Network_PPI/20230605.networkx.nodes.tsv' 
+xf.nodes <- '/home/rohan/CNV_Project/2023/Submission_Pipeline/Results/Plots/Network_PPI/20230609_truncated.networkx.nodes.tsv' 
 
-xf.edges <- '/lab01/Projects/Rohan_Projects/CNV_Project/2023/CNV_Pipeline/Results/Plots/Network_PPI/20230605.networkx.edges.tsv' 
+xf.edges <- '/home/rohan/CNV_Project/2023/Submission_Pipeline/Results/Plots/Network_PPI/20230609_truncated.networkx.edges.tsv' 
 
 target_key = c('target') 
 
