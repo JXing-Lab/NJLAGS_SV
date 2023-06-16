@@ -1,5 +1,3 @@
-# NJLAGS_SV_readme.md
-
 # NJLAGS SV Project
 
 This repository contains data and scripts for Alibutud, Hansali, Cao, Zhou, Mahaganapathy, Azaro, Gwin, Wilson, Buyske, Bartlett, Flax, Brzustowciz, and Xing (2023). Structural variations contribute to the genetic etiology of autism spectrum disorder and language impairments. 
@@ -33,7 +31,7 @@ Data that has to be input into the pipeline from external sources, rather than b
 
 Builder phase:
 
-- starting_data_files: microarray files from Vaidhy
+- starting_data_files: microarray files from Mahaganapathy
 - NJLAGS_CNV.ped: pedigree file of NJLAGS cohort
 - ASD_only.ped: pedigree file for ASD_only phenotype
 - ASD_LI.ped: pedigree file for ASD_only phenotype
@@ -94,3 +92,22 @@ In order to run the gSV pipeline, the following scripts in the /doc/ folder must
 6_results.sh
 7_tables_and_figures.sh
 ```
+
+# Figures and Tables
+
+This directory contains two folders with the scripts used to generate the figures and tables for this project.
+
+### CNV figures and tables
+
+- Starting_Data_Scripts.py - Used to build Table 1 and Table 2
+- CNV_Summarizer.py - Used to build Table 5
+- CNV_Plots.py - Used to plot Figure S1(A)
+- CNV_Enrichment.py - Used to build table for use in Figure S1(B)
+- BoxPlotEnrichment.R - Used to plot Figure S1(B)
+
+### gSV figures and tables
+
+- GenerateGeneLevelSummaryTable_CNV.py - Used to build CNV input table for Table 4
+- GenerateGeneLevelSummaryTable_MEISV.py - Used to build gSV input table for Table 4
+- GenerateGeneLevelSummaryTable.py - Used to build Table 4
+- GenerateSizeDistributionChartsByMEI.py - Used to plot Figure S2
