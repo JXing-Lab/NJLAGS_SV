@@ -92,3 +92,22 @@ In order to run the gSV pipeline, the following scripts in the /doc/ folder must
 6_results.sh
 7_tables_and_figures.sh
 ```
+
+# Figures and Tables
+
+This directory contains two folders with the scripts used to generate the figures and tables for this project.
+
+### CNV figures and tables
+
+- Starting_Data_Scripts.py - Used to build Table 1 and Table 2
+- CNV_Summarizer.py - Used to build Table 5
+- CNV_Plots.py - Used to plot Figure S1(A)
+- CNV_Enrichment.py - Used to build table for use in Figure S1(B)
+- BoxPlotEnrichment.R - Used to plot Figure S1(B)
+
+### gSV figures and tables
+
+- GenerateGeneLevelSummaryTable_CNV.py - Used to build CNV input table for Table 4
+- GenerateGeneLevelSummaryTable_MEISV.py - Used to build gSV input table for Table 4
+- GenerateGeneLevelSummaryTable.py - Used to build Table 4
+- GenerateSizeDistributionChartsByMEI.py - Used to plot Figure S2
