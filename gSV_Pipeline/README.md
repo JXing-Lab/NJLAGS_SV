@@ -2,7 +2,7 @@
 
 ### Instructions
 
-In order to run the gSV pipeline, the following scripts in the /doc/ folder must be run sequentially:
+In order to run the gSV pipeline, the following scripts in the /doc/ folder should be run sequentially:
 
 ```python
 0_merging_callsets.sh
