@@ -1,6 +1,6 @@
 # NJLAGS SV Project
 
-This repository contains data and scripts for Alibutud, Hansali, Cao, Zhou, Mahaganapathy, Azaro, Gwin, Wilson, Buyske, Bartlett, Flax, Brzustowciz, and Xing (2023). Structural variations contribute to the genetic etiology of autism spectrum disorder and language impairments. 
+This repository contains data and scripts for Alibutud, Hansali, Cao, Zhou, Mahaganapathy, Azaro, Gwin, Wilson, Buyske, Bartlett, Flax, Brzustowciz, and Xing (2023) [Structural variations contribute to the genetic etiology of autism spectrum disorder and language impairments.](https://www.mdpi.com/1422-0067/24/17/13248) *Int. J. Mol. Sci.* 24(17), 13248
 
 ### Project structure
 
